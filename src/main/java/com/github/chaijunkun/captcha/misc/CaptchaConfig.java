@@ -1,5 +1,6 @@
 package com.github.chaijunkun.captcha.misc;
 
+import com.github.chaijunkun.captcha.service.CacheService;
 import com.google.code.kaptcha.Producer;
 
 /**
@@ -33,6 +34,11 @@ public class CaptchaConfig {
      * 验证码生成器
      */
     private Producer producer;
+
+    /**
+     * 缓存服务
+     */
+    private CacheService cacheService;
 
     public String getSecKey() {
         return secKey;
@@ -72,5 +78,13 @@ public class CaptchaConfig {
 
     public void setProducer(Producer producer) {
         this.producer = producer;
+    }
+
+    public CacheService getCacheService() {
+        return cacheService;
+    }
+
+    public void setCacheService(CacheService cacheService) {
+        this.cacheService = cacheService;
     }
 }
