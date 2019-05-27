@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.github.chaijunkun.captcha.params;
 
 /**
