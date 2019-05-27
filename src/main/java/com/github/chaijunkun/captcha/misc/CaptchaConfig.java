@@ -18,7 +18,7 @@ public class CaptchaConfig {
     /**
      * 验证码超时门限(秒)
      */
-    private long expire = 30;
+    private int expire = 30;
 
     /**
      * 缓存前缀
@@ -48,11 +48,11 @@ public class CaptchaConfig {
         this.secKey = secKey;
     }
 
-    public long getExpire() {
+    public int getExpire() {
         return expire;
     }
 
-    public void setExpire(long expire) {
+    public void setExpire(int expire) {
         this.expire = expire;
     }
 
