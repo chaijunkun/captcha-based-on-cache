@@ -22,7 +22,9 @@
 		<property name="maxReconnectDelay" value="${maxReconnectDelay}" />
 		<property name="opQueueMaxBlockTime" value="${opQueueMaxBlockTime}" />
 		<!-- 设置哈希算法 -->
-		<property name="hashAlg" ref="KETAMA_HASH" />
+		<property name="hashAlg">
+			<value type="net.spy.memcached.DefaultHashAlgorithm">KETAMA_HASH</value>
+		</property>
 		<!-- 设置定位器类型(ARRAY_MOD,CONSISTENT),默认是ARRAY_MOD -->
 		<property name="locatorType" value="CONSISTENT" />
 		<!-- 设置故障模式(取消，重新分配，重试)，默认是重新分配 -->
