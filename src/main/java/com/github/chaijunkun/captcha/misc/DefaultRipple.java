@@ -1,4 +1,4 @@
-﻿package com.github.chaijunkun.captcha.misc;
+package com.github.chaijunkun.captcha.misc;
 
 import java.awt.image.BufferedImage;
 

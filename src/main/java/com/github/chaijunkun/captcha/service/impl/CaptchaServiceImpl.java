@@ -1,4 +1,4 @@
-﻿package com.github.chaijunkun.captcha.service.impl;
+package com.github.chaijunkun.captcha.service.impl;
 
 import java.awt.image.BufferedImage;
 import java.util.Random;

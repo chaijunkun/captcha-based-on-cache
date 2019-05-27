@@ -1,4 +1,4 @@
-﻿package com.github.chaijunkun.captcha.util;
+package com.github.chaijunkun.captcha.util;
 
 import org.apache.commons.codec.binary.Base64;
 

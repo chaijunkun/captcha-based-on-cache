@@ -1,4 +1,4 @@
-﻿package com.github.chaijunkun.captcha.util;
+package com.github.chaijunkun.captcha.util;
 
 import java.io.IOException;
 import java.io.InputStream;
