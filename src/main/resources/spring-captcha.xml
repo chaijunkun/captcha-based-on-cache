@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+           
+    <bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+    	<property name="config">
+    		<bean class="com.google.code.kaptcha.util.Config">
+    			<constructor-arg type="java.util.Properties">
+    				<props>
+    					<prop key="kaptcha.border">no</prop>
+						<prop key="kaptcha.image.width">65</prop>
+						<prop key="kaptcha.image.height">40</prop>
+						<prop key="kaptcha.textproducer.font.size">20</prop>
+						<prop key="kaptcha.word.impl">com.github.chaijunkun.captcha.misc.MyWordRenderer</prop>
+						<prop key="kaptcha.obscurificator.impl">com.github.chaijunkun.captcha.misc.DefaultRipple</prop>
+					</props>
+				</constructor-arg>
+			</bean>
+        </property>
+    </bean>
+
+	<!--验证码生成配置-->
+	<bean id="captchaConfig" class="com.github.chaijunkun.captcha.misc.CaptchaConfig">
+		<property name="secKey" value="I+Rj5j]#D*a-" />
+		<property name="expire" value="10" />
+		<property name="cachePrefix" value="cap" />
+		<property name="charCount" value="4" />
+		<property name="producer" ref="captchaProducer" />
+		<property name="cacheService" ref="cacheService" />
+	</bean>
+    
+	<!--实例化验证码服务 -->
+	<bean id="captchaService" class="com.github.chaijunkun.captcha.service.impl.CaptchaServiceImpl">
+		<property name="captchaConfig" ref="captchaConfig" />
+	</bean>
+</beans>
