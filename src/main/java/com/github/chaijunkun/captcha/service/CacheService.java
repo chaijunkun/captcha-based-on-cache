@@ -5,4 +5,9 @@ package com.github.chaijunkun.captcha.service;
  * @author chaijunkun
  */
 public interface CacheService {
+
+    boolean hasKey(String key);
+
+    void set(String key, String value, long expire);
+
 }
